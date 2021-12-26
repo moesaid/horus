@@ -1,13 +1,13 @@
 part of '../horus.dart';
 
 extension HorusString on String {
-// **************************************************************************
-// Number methods checkers (returns true or false)
-// case sensitive
-// **************************************************************************
+  // **************************************************************************
+  // Number methods checkers (returns true or false)
+  // case sensitive
+  // **************************************************************************
 
-// The strContains method determines if the given string contains the given value.
-// This method is case sensitive:
+  // The strContains method determines if the given string contains the given value.
+  // This method is case sensitive:
   bool strContains(String value) {
     return contains(value);
 
@@ -16,8 +16,8 @@ extension HorusString on String {
     // strContains('Hello World', 'world'); // returns false
   }
 
-// You may also pass an array of values to determine
-// if the given string contains any of the values in the array:
+  // You may also pass an array of values to determine
+  // if the given string contains any of the values in the array:
   bool strContainsAny(List<String> values) {
     return values.any((value) => contains(value));
 
@@ -26,7 +26,7 @@ extension HorusString on String {
     // strContainsAny('Hello World', ['world', 'hello']); // returns false
   }
 
-// you may also check if the given string contains all of the values in the array:
+  // you may also check if the given string contains all of the values in the array:
   bool strContainsAll(List<String> values) {
     return values.every((value) => contains(value));
 
@@ -35,7 +35,7 @@ extension HorusString on String {
     // strContainsAll('Hello World', ['hello', 'hello']); // returns false
   }
 
-// The strEndsWith method determines if the given string ends with the given value:
+  // The strEndsWith method determines if the given string ends with the given value:
   bool strEndsWith(String value) {
     return endsWith(value);
 
@@ -45,8 +45,8 @@ extension HorusString on String {
     // strEndsWith('Hello World', 'Hello'); // returns false
   }
 
-// You may also pass an array of values to determine if the given string
-// ends with any of the values in the array:
+  // You may also pass an array of values to determine if the given string
+  // ends with any of the values in the array:
   bool strEndsWithAny(List<String> values) {
     return values.any((value) => endsWith(value));
 
@@ -56,7 +56,7 @@ extension HorusString on String {
     // strEndsWithAny('Hello World', ['Hello', 'hello']); // returns false
   }
 
-// The strEquals method determines if the given string equals the given value:
+  // The strEquals method determines if the given string equals the given value:
   bool strEquals(String value) {
     return this == value;
 
@@ -66,7 +66,7 @@ extension HorusString on String {
     // strEquals('Hello World', 'hello world'); // returns false
   }
 
-// the strStartsWith method determines if the given string starts with the given value:
+  // the strStartsWith method determines if the given string starts with the given value:
   bool strStartsWith(String value) {
     return startsWith(value);
 
@@ -76,7 +76,8 @@ extension HorusString on String {
     // strStartsWith('Hello World', 'World'); // returns false
   }
 
-// You may also pass an array of values to determine if the given string starts with any of the values in the array:
+  // You may also pass an array of values to determine
+  // if the given string starts with any of the values in the array:
   bool strStartsWithAny(List<String> values) {
     return values.any((value) => startsWith(value));
 
@@ -86,7 +87,7 @@ extension HorusString on String {
     // strStartsWithAny('Hello World', ['World', 'world']); // returns false
   }
 
-// the strEquals method determines if the given string equals the given value:
+  // the strEquals method determines if the given string equals the given value:
   bool srtEqual(String value) {
     return this == value;
 
@@ -95,7 +96,7 @@ extension HorusString on String {
     // strEquals('Hello World', 'Hello'); // returns false
   }
 
-// you may also check if the given string equals any of the values in the array:
+  // you may also check if the given string equals any of the values in the array:
   bool strEqualsAny(List<String> values) {
     return values.any((value) => this == value);
 
@@ -104,8 +105,8 @@ extension HorusString on String {
     // strEqualsAny('Hello World', ['Hello World' , 'world']); // returns true
   }
 
-// The strIs method determines if a given string matches a given pattern.
-// Asterisks may be used as wildcard values:
+  // The strIs method determines if a given string matches a given pattern.
+  // Asterisks may be used as wildcard values:
 
   bool strIs(String pattern) {
     return RegExp(pattern).hasMatch(this);
@@ -116,7 +117,7 @@ extension HorusString on String {
     // strIs('foo*', 'bar'); // returns false
   }
 
-// The strIsAscii method determines if a given string is 7 bit ASCII:
+  // The strIsAscii method determines if a given string is 7 bit ASCII:
   bool strIsAscii() {
     return RegExp(r'^[\x00-\x7F]*$').hasMatch(this);
 
@@ -136,12 +137,12 @@ extension HorusString on String {
     // strIsUuid('flutter'); // returns false
   }
 
-// **************************************************************************
-// Number methods to manipulate the given value ( String )
-// **************************************************************************
+  // **************************************************************************
+  // Number methods to manipulate the given value ( String )
+  // **************************************************************************
 
-// The strFinish method adds a single instance of the given value
-// to a string if it does not already end with that value:
+  // The strFinish method adds a single instance of the given value
+  // to a string if it does not already end with that value:
   String strFinish(String value) {
     return endsWith(value) ? this : '$this $value';
 
@@ -150,8 +151,8 @@ extension HorusString on String {
     // strFinish('Hello World', '!'); // returns 'Hello World!'
   }
 
-// The srtStart method adds a single instance of the given value
-// to a string if it does not already start with that value:
+  // The srtStart method adds a single instance of the given value
+  // to a string if it does not already start with that value:
   String strStart(String value) {
     if (!startsWith(value)) {
       this == value + this;
@@ -162,9 +163,9 @@ extension HorusString on String {
     // strStart('Hello World', '!'); // returns '!Hello World'
   }
 
-// The strHeadline method will convert strings
-// delimited by casing, hyphens, or underscores into a space delimited
-// string with each word's first letter capitalized:
+  // The strHeadline method will convert strings
+  // delimited by casing, hyphens, or underscores into a space delimited
+  // string with each word's first letter capitalized:
 
   String strHeadline() {
     return replaceAll(RegExp(r'[-_.]'), ' ').split(' ').map((word) {
@@ -178,7 +179,7 @@ extension HorusString on String {
     // strHeadline('hello.world'); // returns 'Hello World'
   }
 
-// The strUid method will generate a unique identifier:
+  // The strUid method will generate a unique identifier:
   String strUid(String prefix) {
     return prefix + DateTime.now().millisecondsSinceEpoch.toString();
 
@@ -186,7 +187,7 @@ extension HorusString on String {
     // strUid('foo_'); // returns 'foo_1589788888888'
   }
 
-// The strKebab method converts the given string to kebab-case:
+  // The strKebab method converts the given string to kebab-case:
   String strKebab() {
     return replaceAllMapped(RegExp(r'[A-Z]'), (match) {
       return '-' + match.group(0).toString().toLowerCase();
@@ -196,9 +197,9 @@ extension HorusString on String {
     // strKebab('helloWorld'); // returns 'hello-world'
   }
 
-// The strLimit method truncates the given string to the specified length:
-// also You may pass a third argument to the method to change the string
-// that will be appended to the end of the truncated string:
+  // The strLimit method truncates the given string to the specified length:
+  // also You may pass a third argument to the method to change the string
+  // that will be appended to the end of the truncated string:
   String strLimit(int limit, [String ending = '...']) {
     if (length > limit) {
       return substring(0, limit) + ending;
@@ -210,7 +211,7 @@ extension HorusString on String {
     // strLimit('Hello World', 5, '!'); // returns 'Hello!'
   }
 
-// The repeet method repeats the given string n times:
+  // The repeet method repeats the given string n times:
   String strRepeat(int n) {
     return this * n;
 
@@ -218,11 +219,11 @@ extension HorusString on String {
     // strRepeat('Hello', 3); // returns 'HelloHelloHello'
   }
 
-// The strMask method masks a portion of a string with a repeated character,
-// and may be used to obfuscate segments of strings such as email addresses and phone numbers:
-// strat by default is the start index of the string to be masked
-// end by default is the end index of the string to be masked
-// mask is the character to be used for masking the string (default is '*')
+  // The strMask method masks a portion of a string with a repeated character,
+  // and may be used to obfuscate segments of strings such as email addresses and phone numbers:
+  // strat by default is the start index of the string to be masked
+  // end by default is the end index of the string to be masked
+  // mask is the character to be used for masking the string (default is '*')
   String strMask([int start = 0, int? end, String mask = '*']) {
     final int _end = end ?? length;
 
@@ -236,8 +237,8 @@ extension HorusString on String {
     // strMask('Hello World', 0,  10); // returns 'Hello World*****'
   }
 
-// The strPlural method converts a singular word string to its plural form.
-// This function currently only supports the English language:
+  // The strPlural method converts a singular word string to its plural form.
+  // This function currently only supports the English language:
   String strPlural() {
     if (endsWith('y')) {
       return substring(0, length - 1) + 'ies';
@@ -253,7 +254,8 @@ extension HorusString on String {
     // strPlural('bus'); // returns 'buses'
   }
 
-// The strSingular method converts a string to its singular form. This function currently only supports the English language:
+  // The strSingular method converts a string to its singular form.
+  // This function currently only supports the English language:
   String strSingular() {
     if (endsWith('ies')) {
       return substring(0, length - 3) + 'y';
@@ -272,10 +274,10 @@ extension HorusString on String {
     // strSingular('buses'); // returns 'bus'
   }
 
-// The strRandom method generates a random string of the specified length.
-// The characters used are a-z, A-Z, 0-9, and the symbols !@#$%^&*()-_=+|[]{};:<>,./?
-// The default length is 16 characters , but you may pass a second argument to specify the length:
-// no spaces are added to the string
+  // The strRandom method generates a random string of the specified length.
+  // The characters used are a-z, A-Z, 0-9, and the symbols !@#$%^&*()-_=+|[]{};:<>,./?
+  // The default length is 16 characters , but you may pass a second argument to specify the length:
+  // no spaces are added to the string
   String strRandom([int length = 10]) {
     String _chars =
         'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#%^&*()-_=+|[]{};:<>,./?';
@@ -292,7 +294,7 @@ extension HorusString on String {
     // strRandom(5); // returns 'a1B2c3D4e5'
   }
 
-// The strRemove method removes the given value from the string:
+  // The strRemove method removes the given value from the string:
   String strRemove(String value) {
     return toLowerCase().replaceAll(RegExp(value.toLowerCase()), '');
 
@@ -300,7 +302,7 @@ extension HorusString on String {
     // strRemove('Hello World', 'Hello'); // returns ' World'
   }
 
-// The strReplace method replaces a given string within the string:
+  // The strReplace method replaces a given string within the string:
   String strReplace(String search, String replacement) {
     return replaceAll(RegExp(search), replacement);
 
@@ -309,7 +311,7 @@ extension HorusString on String {
     // strReplace('flutter v1', 'v1', 'v2'); // returns 'flutter v2'
   }
 
-// The strReplaceArray method replaces a given value in the string sequentially using an array:
+  // The strReplaceArray method replaces a given value in the string sequentially using an array:
   String strReplaceArray(List<String> search, List<String> replacement) {
     for (int i = 0; i < search.length; i++) {
       this ==
@@ -322,7 +324,7 @@ extension HorusString on String {
     // strReplaceArray('Hello World', ['Hello', 'World'], ['Hi', 'Universe']); // returns 'Hi Universe'
   }
 
-// The strReplaceFirst method replaces the first occurrence of a given value in a string:
+  // The strReplaceFirst method replaces the first occurrence of a given value in a string:
   String strReplaceFirst(String search, String replacement) {
     return replaceFirst(RegExp(search), replacement);
 
@@ -331,7 +333,7 @@ extension HorusString on String {
     // strReplaceFirst('flutter v1', 'v1', 'v2'); // returns 'flutter v2'
   }
 
-// The strReverse method reverses the given string:
+  // The strReverse method reverses the given string:
   String strReverse() {
     return split('').reversed.join();
 
@@ -339,7 +341,7 @@ extension HorusString on String {
     // strReverse('Hello World'); // returns 'dlroW olleH'
   }
 
-// The strSlug method generates a URL friendly "slug" from the given string:
+  // The strSlug method generates a URL friendly "slug" from the given string:
   String strSlug() {
     return toLowerCase()
         .replaceAll(RegExp(r'[^a-z0-9]+'), '-')
@@ -351,7 +353,7 @@ extension HorusString on String {
     // strSlug('Hello World'); // returns 'hello-world'
   }
 
-// The strSnake method converts the given string to snake_case:
+  // The strSnake method converts the given string to snake_case:
   String strSnake() {
     return replaceAllMapped(RegExp(r'[A-Z]'), (Match m) {
       return '_' + m.group(0)!.toLowerCase();
@@ -361,7 +363,7 @@ extension HorusString on String {
     // strSnake('Hello World'); // returns 'hello_world'
   }
 
-// The strStudly method converts the given string to StudlyCase:
+  // The strStudly method converts the given string to StudlyCase:
   String strStudly() {
     return replaceAllMapped(RegExp(r'[_-]+'), (Match m) {
       return m.group(0)!.toUpperCase();
@@ -371,7 +373,7 @@ extension HorusString on String {
     // strStudly('hello_world'); // returns 'HelloWorld'
   }
 
-// The strSubthismethod returns the portion of string specified by the start and length parameters:
+  // The strSubthismethod returns the portion of string specified by the start and length parameters:
   String strSubstr(int start, [int? length]) {
     final int _length = length ?? length! - start;
     return substring(start, start + _length);
@@ -381,7 +383,7 @@ extension HorusString on String {
     // strSubstr('Hello World', 5); // returns 'World'
   }
 
-// The strSubstrCount method returns the number of occurrences of a given value in the given string:
+  // The strSubstrCount method returns the number of occurrences of a given value in the given string:
   int strSubstrCount(String search) {
     return toLowerCase().split(search.toLowerCase()).length - 1;
 
@@ -390,7 +392,7 @@ extension HorusString on String {
     // strSubstrCount('Hello World', 'l'); // returns 3
   }
 
-// The strTitle method converts the given string to Title Case (all words capitalized) and spaces:
+  // The strTitle method converts the given string to Title Case (all words capitalized) and spaces:
   String strTitle() {
     return replaceAllMapped(RegExp(r'\b\w'), (Match m) {
       return m.group(0)!.toUpperCase();
@@ -400,7 +402,7 @@ extension HorusString on String {
     // strTitle('hello world'); // returns 'Hello World'
   }
 
-// The strUcfirst method returns the given string with the first character capitalized:
+  // The strUcfirst method returns the given string with the first character capitalized:
   String strUcfirst() {
     return substring(0, 1).toUpperCase() + substring(1);
 
@@ -408,7 +410,7 @@ extension HorusString on String {
     // strUcfirst('hello world'); // returns 'Hello world'
   }
 
-// The strUpper method converts the given string to uppercase:
+  // The strUpper method converts the given string to uppercase:
   String strUpper() {
     return toUpperCase();
 
@@ -416,7 +418,7 @@ extension HorusString on String {
     // strUpper('hello world'); // returns 'HELLO WORLD'
   }
 
-// The strWordCount method returns the number of words that a string contains:
+  // The strWordCount method returns the number of words that a string contains:
   int strWordCount() {
     return split(' ').length;
 
@@ -424,9 +426,9 @@ extension HorusString on String {
     // strWordCount('Hello World'); // returns 2
   }
 
-// The strWords method limits the number of words in a string.
-// An additional string may be passed to this method via its third argument
-// to specify which string should be appended to the end of the truncated string:
+  // The strWords method limits the number of words in a string.
+  // An additional string may be passed to this method via its third argument
+  // to specify which string should be appended to the end of the truncated string:
   String strWords(int limit, [String? end]) {
     final List<String> _words = split(' ');
     final String _end = end ?? '...';
