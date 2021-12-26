@@ -198,6 +198,25 @@ extension Horus on List {
     // [1, 2].arrConcat([3, 4]); // [1, 2, 3, 4]
   }
 
+  // The arrUnion method returns an array of unique values, in order, from all given arrays
+  List arrUnion(List items) {
+    List arr = [];
+    for (var i = 0; i < length; i++) {
+      if (!arr.contains(this[i])) {
+        arr.add(this[i]);
+      }
+    }
+    for (var i = 0; i < items.length; i++) {
+      if (!arr.contains(items[i])) {
+        arr.add(items[i]);
+      }
+    }
+    return arr;
+
+    // example:
+    // [1, 2, 3].arrUnion([2, 3, 4]); // [1, 2, 3, 4]
+  }
+
   // The arrKeys method returns the keys of an array of objects:
   List arrKeys() {
     List keys = [];
