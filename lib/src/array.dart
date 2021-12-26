@@ -241,6 +241,18 @@ extension Horus on List {
     // [{'a': 1}, {'b': 2}].arrValues(); // [1, 2]
   }
 
+  // The arrPluck method returns the values of an array of objects:
+  List arrPluck(String key) {
+    List values = [];
+    for (var i = 0; i < length; i++) {
+      values.add(this[i][key]);
+    }
+    return values;
+
+    // example:
+    // [{'a': 1}, {'b': 2}].arrPluck('a'); // [1]
+  }
+
   // The arrWhereKey method filters the array of objects by a specific key:
   Map arrWhereKey(dynamic key) {
     Map arr = {};
