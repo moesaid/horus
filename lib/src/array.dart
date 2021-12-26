@@ -24,29 +24,23 @@ extension Horus on List {
     return arr;
   }
 
-  // The arrContainsValue method determines if the array of key / value pair contains the given value:
-  bool arrContainsValue(value) {
-    if (this is List) {
-      for (var i = 0; i < length; i++) {
-        if (this[i][1] == value) return true;
-      }
-    }
-    return false;
-
-    // example:
-    // var arr = [ [ 'key', 'value' ], [ 'key2', 'value2' ] ];
-    // arrContainsValue( 'value' ); // true
-  }
-
-  // The arrAdd method adds a value to the end of the list.
-  List arrAdd(value) {
-    if (this is List) {
-      add(value);
-    }
+  // The arrAdd method adds an item to the end of the list:
+  List arrAdd(dynamic item) {
+    add(item);
     return this;
   }
 
-  // The arrAddKeyValue method adds a given key / value pair to an array if the given key doesn't already exist in the array
-  // or is set to null:
+  // The arrContains method determines if the list contains a specific item:
+  bool arrContains(dynamic item) {
+    return contains(item);
+  }
 
+  // The arrSum method sum the values of an array:
+  num arrSum() {
+    num sum = 0;
+    for (var i = 0; i < length; i++) {
+      sum += this[i];
+    }
+    return sum;
+  }
 }
