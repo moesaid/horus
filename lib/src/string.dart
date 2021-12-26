@@ -117,7 +117,7 @@ extension HorusString on String {
   }
 
 // The strIsAscii method determines if a given string is 7 bit ASCII:
-  bool strIsAscii(String str) {
+  bool strIsAscii() {
     return RegExp(r'^[\x00-\x7F]*$').hasMatch(this);
 
     // example:
@@ -126,7 +126,7 @@ extension HorusString on String {
   }
 
 // The strIsUuid method determines if the given string is a valid UUID:
-  bool strIsUuid(String str) {
+  bool strIsUuid() {
     return RegExp(
             r'^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')
         .hasMatch(this);
@@ -166,7 +166,7 @@ extension HorusString on String {
 // delimited by casing, hyphens, or underscores into a space delimited
 // string with each word's first letter capitalized:
 
-  String strHeadline(String str) {
+  String strHeadline() {
     return replaceAll(RegExp(r'[-_.]'), ' ').split(' ').map((word) {
       return word[0].toUpperCase() + word.substring(1);
     }).join(' ');
@@ -187,7 +187,7 @@ extension HorusString on String {
   }
 
 // The strKebab method converts the given string to kebab-case:
-  String strKebab(String str) {
+  String strKebab() {
     return replaceAllMapped(RegExp(r'[A-Z]'), (match) {
       return '-' + match.group(0).toString().toLowerCase();
     });
@@ -238,7 +238,7 @@ extension HorusString on String {
 
 // The strPlural method converts a singular word string to its plural form.
 // This function currently only supports the English language:
-  String strPlural(String str) {
+  String strPlural() {
     if (endsWith('y')) {
       return substring(0, length - 1) + 'ies';
     }
@@ -254,7 +254,7 @@ extension HorusString on String {
   }
 
 // The strSingular method converts a string to its singular form. This function currently only supports the English language:
-  String strSingular(String str) {
+  String strSingular() {
     if (endsWith('ies')) {
       return substring(0, length - 3) + 'y';
     }
@@ -332,7 +332,7 @@ extension HorusString on String {
   }
 
 // The strReverse method reverses the given string:
-  String strReverse(String str) {
+  String strReverse() {
     return split('').reversed.join();
 
     // example:
@@ -340,9 +340,8 @@ extension HorusString on String {
   }
 
 // The strSlug method generates a URL friendly "slug" from the given string:
-  String strSlug(String str) {
-    return str
-        .toLowerCase()
+  String strSlug() {
+    return toLowerCase()
         .replaceAll(RegExp(r'[^a-z0-9]+'), '-')
         .replaceAll(RegExp(r'-+'), '-')
         .replaceAll(RegExp(r'^-+'), '')
@@ -353,7 +352,7 @@ extension HorusString on String {
   }
 
 // The strSnake method converts the given string to snake_case:
-  String strSnake(String str) {
+  String strSnake() {
     return replaceAllMapped(RegExp(r'[A-Z]'), (Match m) {
       return '_' + m.group(0)!.toLowerCase();
     });
@@ -363,7 +362,7 @@ extension HorusString on String {
   }
 
 // The strStudly method converts the given string to StudlyCase:
-  String strStudly(String str) {
+  String strStudly() {
     return replaceAllMapped(RegExp(r'[_-]+'), (Match m) {
       return m.group(0)!.toUpperCase();
     });
@@ -392,7 +391,7 @@ extension HorusString on String {
   }
 
 // The strTitle method converts the given string to Title Case (all words capitalized) and spaces:
-  String strTitle(String str) {
+  String strTitle() {
     return replaceAllMapped(RegExp(r'\b\w'), (Match m) {
       return m.group(0)!.toUpperCase();
     });
@@ -402,7 +401,7 @@ extension HorusString on String {
   }
 
 // The strUcfirst method returns the given string with the first character capitalized:
-  String strUcfirst(String str) {
+  String strUcfirst() {
     return substring(0, 1).toUpperCase() + substring(1);
 
     // example:
@@ -410,7 +409,7 @@ extension HorusString on String {
   }
 
 // The strUpper method converts the given string to uppercase:
-  String strUpper(String str) {
+  String strUpper() {
     return toUpperCase();
 
     // example:
@@ -418,7 +417,7 @@ extension HorusString on String {
   }
 
 // The strWordCount method returns the number of words that a string contains:
-  int strWordCount(String str) {
+  int strWordCount() {
     return split(' ').length;
 
     // example:
