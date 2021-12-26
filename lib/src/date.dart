@@ -35,3 +35,32 @@ int dayOfTheYear(DateTime date) {
   days += date.day;
   return days;
 }
+
+// The diff function returns the difference between two dates in days.
+// The first parameter is the start date, the second parameter is the end date.
+// The start date is inclusive, the end date is exclusive.
+int diff(DateTime start, DateTime end) {
+  int days = 0;
+  if (start.year == end.year) {
+    days = end.day - start.day;
+    for (int i = start.month + 1; i < end.month; i++) {
+      days += daysInMonth(i, end.year);
+    }
+  } else {
+    days = end.day;
+    for (int i = start.month + 1; i < 12; i++) {
+      days += daysInMonth(i, start.year);
+    }
+    for (int i = 1; i < end.month; i++) {
+      days += daysInMonth(i, end.year);
+    }
+    days += 365 - start.day;
+    for (int i = start.year + 1; i < end.year; i++) {
+      days += 365;
+      if (isLeapYear(i)) {
+        days++;
+      }
+    }
+  }
+  return days;
+}
