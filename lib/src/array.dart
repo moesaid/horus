@@ -176,4 +176,32 @@ extension Horus on List {
     // example:
     // [{'a': 1}, {'b': 2}].arrValues(); // [1, 2]
   }
+
+  // The arrWhereKey method filters the array of objects by a specific key:
+  Map arrWhereKey(dynamic key) {
+    Map arr = {};
+    for (var i = 0; i < length; i++) {
+      if (this[i].keys.toList()[0] == key) {
+        arr[this[i].keys.toList()[0]] = this[i].values.toList()[0];
+      }
+    }
+    return arr;
+
+    // example:
+    // [{'a': 1}, {'b': 2}].arrWhereKey('a'); // {'a': 1}
+  }
+
+  // The arrWhereValue method filters the array of objects by a specific value:
+  Map arrWhereValue(dynamic value) {
+    Map arr = {};
+    for (var i = 0; i < length; i++) {
+      if (this[i].values.toList()[0] == value) {
+        arr[this[i].keys.toList()[0]] = this[i].values.toList()[0];
+      }
+    }
+    return arr;
+
+    // example:
+    // [{'a': 1}, {'b': 2}].arrWhereValue(1); // {'a': 1}
+  }
 }
