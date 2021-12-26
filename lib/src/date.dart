@@ -66,3 +66,10 @@ int diff(DateTime start, DateTime end, [String unit = 'day']) {
     throw Exception('Invalid unit: $unit');
   }
 }
+
+// The isSameDate function returns true if the two dates are the same date.
+bool isSameDate(DateTime start, DateTime end) {
+  return start.year == end.year &&
+      start.month == end.month &&
+      start.day == end.day;
+}
