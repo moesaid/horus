@@ -130,4 +130,18 @@ extension Horus on List {
     // example:
     // [1, 2, 3].arrMin(); // 1
   }
+
+  // The arrMax method returns the maximum value of an array:
+  num arrMax() {
+    num max = this[0];
+    for (var i = 0; i < length; i++) {
+      if (this[i] > max) {
+        max = this[i];
+      }
+    }
+    return max;
+
+    // example:
+    // [1, 2, 3].arrMax(); // 3
+  }
 }
