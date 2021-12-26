@@ -56,16 +56,6 @@ extension HorusString on String {
     // strEndsWithAny('Hello World', ['Hello', 'hello']); // returns false
   }
 
-  // The strEquals method determines if the given string equals the given value:
-  bool strEquals(String value) {
-    return this == value;
-
-    // example:
-    // strEquals('Hello World', 'Hello World'); // returns true
-    // strEquals('Hello World', 'Hello'); // returns false
-    // strEquals('Hello World', 'hello world'); // returns false
-  }
-
   // the strStartsWith method determines if the given string starts with the given value:
   bool strStartsWith(String value) {
     return startsWith(value);
