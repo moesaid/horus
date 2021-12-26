@@ -144,4 +144,36 @@ extension Horus on List {
     // example:
     // [1, 2, 3].arrMax(); // 3
   }
+
+  // The arrDifference method returns the difference between the max and min values of an array:
+  num arrDifference() {
+    return arrMax() - arrMin();
+
+    // example:
+    // [1, 2, 3 ,4].arrDifference(); // 3
+  }
+
+  // The arrKeys method returns the keys of an array of objects:
+  List arrKeys() {
+    List keys = [];
+    for (var i = 0; i < length; i++) {
+      keys.add(this[i].keys.toList()[0]);
+    }
+    return keys;
+
+    // example:
+    // [{'a': 1}, {'b': 2}].arrKeys(); // ['a', 'b']
+  }
+
+  // The arrValues method returns the values of an array of objects:
+  List arrValues() {
+    List values = [];
+    for (var i = 0; i < length; i++) {
+      values.add(this[i].values.toList()[0]);
+    }
+    return values;
+
+    // example:
+    // [{'a': 1}, {'b': 2}].arrValues(); // [1, 2]
+  }
 }
