@@ -39,28 +39,30 @@ int dayOfTheYear(DateTime date) {
 // The diff function returns the difference between two dates in days.
 // The first parameter is the start date, the second parameter is the end date.
 // The start date is inclusive, the end date is exclusive.
-int diff(DateTime start, DateTime end) {
-  int days = 0;
-  if (start.year == end.year) {
-    days = end.day - start.day;
-    for (int i = start.month + 1; i < end.month; i++) {
-      days += daysInMonth(i, end.year);
-    }
+// Available units: year, month, week, day, hour, minute, second, millisecond.
+// The default unit is day.
+int diff(DateTime start, DateTime end, [String unit = 'day']) {
+  if (unit == 'year') {
+    return end.year - start.year;
+  } else if (unit == 'month') {
+    return (end.year - start.year) * 12 + end.month - start.month;
+  } else if (unit == 'week') {
+    return (end.millisecondsSinceEpoch - start.millisecondsSinceEpoch) ~/
+        (1000 * 60 * 60 * 24 * 7);
+  } else if (unit == 'day') {
+    return (end.millisecondsSinceEpoch - start.millisecondsSinceEpoch) ~/
+        (1000 * 60 * 60 * 24);
+  } else if (unit == 'hour') {
+    return (end.millisecondsSinceEpoch - start.millisecondsSinceEpoch) ~/
+        (1000 * 60 * 60);
+  } else if (unit == 'minute') {
+    return (end.millisecondsSinceEpoch - start.millisecondsSinceEpoch) ~/
+        (1000 * 60);
+  } else if (unit == 'second') {
+    return (end.millisecondsSinceEpoch - start.millisecondsSinceEpoch) ~/ 1000;
+  } else if (unit == 'millisecond') {
+    return end.millisecondsSinceEpoch - start.millisecondsSinceEpoch;
   } else {
-    days = end.day;
-    for (int i = start.month + 1; i < 12; i++) {
-      days += daysInMonth(i, start.year);
-    }
-    for (int i = 1; i < end.month; i++) {
-      days += daysInMonth(i, end.year);
-    }
-    days += 365 - start.day;
-    for (int i = start.year + 1; i < end.year; i++) {
-      days += 365;
-      if (isLeapYear(i)) {
-        days++;
-      }
-    }
+    throw Exception('Invalid unit: $unit');
   }
-  return days;
 }
