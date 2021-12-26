@@ -11,6 +11,26 @@ extension Horus on List {
     return runtimeType.toString();
   }
 
+  // The arrLength method determines the length of the list.
+  int arrLength() {
+    return length;
+  }
+
+  // The arrFirst method returns the first element of the list.
+  dynamic arrFirst() {
+    return arrAccessible() ? this[0] : null;
+  }
+
+  // The arrLast method returns the last element of the list.
+  dynamic arrLast() {
+    return arrAccessible() ? this[length - 1] : null;
+  }
+
+  // The arrRandom method returns a random element of the list.
+  dynamic arrRandom() {
+    return arrAccessible() ? this[Random().nextInt(length)] : null;
+  }
+
   // The arrCollapse method collapses an array of arrays into a single array:
   List arrCollapse() {
     List arr = [];
