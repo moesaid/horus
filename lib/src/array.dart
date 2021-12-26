@@ -218,4 +218,32 @@ extension Horus on List {
     // example:
     // [{'id': 1, 'name': 'John'}, {'id': 2, 'name': 'Jane'}].arrWhereId(1); // {'id': 1, 'name': 'John'}
   }
+
+  // The arrUniq method returns an array of unique values:
+  List arrUniq() {
+    List arr = [];
+    for (var i = 0; i < length; i++) {
+      if (!arr.contains(this[i])) {
+        arr.add(this[i]);
+      }
+    }
+    return arr;
+
+    // example:
+    // [1, 2, 3, 1, 4, 5].arrUniq(); // [1, 2, 3, 4, 5]
+  }
+
+  // The arrUniqBy method returns an array of unique values:
+  List arrUniqBy(dynamic key) {
+    List arr = [];
+    for (var i = 0; i < length; i++) {
+      if (!arr.contains(this[i][key])) {
+        arr.add(this[i][key]);
+      }
+    }
+    return arr;
+
+    // example:
+    // [{'a': 1}, {'a': 2}, {'a': 1}].arrUniqBy('a'); // [1, 2]
+  }
 }
