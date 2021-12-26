@@ -50,6 +50,14 @@ extension Horus on List {
     return this;
   }
 
+  // The arrAddAll method adds all items in the list to the end of the list:
+  List arrAddAll(List items) {
+    for (var i = 0; i < items.length; i++) {
+      add(items[i]);
+    }
+    return this;
+  }
+
   // The arrContains method determines if the list contains a specific item:
   bool arrContains(dynamic item) {
     return contains(item);
@@ -72,5 +80,10 @@ extension Horus on List {
       sum += this[i];
     }
     return sum;
+  }
+
+  // The arrAvg method returns the average value of an array:
+  num arrAvg() {
+    return arrSum() / length;
   }
 }
