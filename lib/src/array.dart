@@ -204,4 +204,18 @@ extension Horus on List {
     // example:
     // [{'a': 1}, {'b': 2}].arrWhereValue(1); // {'a': 1}
   }
+
+  // The arrWhereId method filters the array of objects where the id property is equal to a specific id:
+  Map arrWhereId(dynamic id) {
+    Map arr = {};
+    for (var i = 0; i < length; i++) {
+      if (this[i]['id'] == id) {
+        arr = this[i];
+      }
+    }
+    return arr;
+
+    // example:
+    // [{'id': 1, 'name': 'John'}, {'id': 2, 'name': 'Jane'}].arrWhereId(1); // {'id': 1, 'name': 'John'}
+  }
 }
