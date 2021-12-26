@@ -183,6 +183,21 @@ extension Horus on List {
     // [[1, 2], [3, 4]].arrFlatten(); // [1, 2, 3, 4]
   }
 
+  // The arrConcat method concatenates two or more arrays:
+  List arrConcat(List items) {
+    List arr = [];
+    for (var i = 0; i < length; i++) {
+      arr.add(this[i]);
+    }
+    for (var i = 0; i < items.length; i++) {
+      arr.add(items[i]);
+    }
+    return arr;
+
+    // example:
+    // [1, 2].arrConcat([3, 4]); // [1, 2, 3, 4]
+  }
+
   // The arrKeys method returns the keys of an array of objects:
   List arrKeys() {
     List keys = [];
