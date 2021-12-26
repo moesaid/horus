@@ -2,5 +2,5 @@ library horus;
 
 import 'dart:math';
 
-// string work
 part 'src/string.dart';
+part 'src/array.dart';
