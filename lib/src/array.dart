@@ -153,6 +153,36 @@ extension Horus on List {
     // [1, 2, 3 ,4].arrDifference(); // 3
   }
 
+  // The arrCompact method removes all falsy values from an array:
+  List arrCompact() {
+    List arr = [];
+    for (var i = 0; i < length; i++) {
+      if (this[i]) {
+        arr.add(this[i]);
+      }
+    }
+    return arr;
+
+    // example:
+    // [1, 2, false, 3, null, 4].arrCompact(); // [1, 2, 3, 4]
+  }
+
+  // The arrFlatten method flattens a multi-dimensional array into a single array:
+  List arrFlatten() {
+    List arr = [];
+    for (var i = 0; i < length; i++) {
+      if (this[i] is List) {
+        arr.addAll(this[i]);
+      } else {
+        arr.add(this[i]);
+      }
+    }
+    return arr;
+
+    // example:
+    // [[1, 2], [3, 4]].arrFlatten(); // [1, 2, 3, 4]
+  }
+
   // The arrKeys method returns the keys of an array of objects:
   List arrKeys() {
     List keys = [];
