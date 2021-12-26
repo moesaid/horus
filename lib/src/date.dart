@@ -7,6 +7,9 @@ part of '../horus.dart';
 // isLeapYear returns true if the given year is a leap year
 bool isLeapYear(int year) {
   return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+
+  // example:
+  // isLeapYear(2020) => true
 }
 
 // The daysInMonth function is used to calculate the number of days in a month for a given year.
@@ -24,6 +27,9 @@ int daysInMonth(int month, int year) {
   } else {
     return 31;
   }
+
+  // example:
+  // daysInMonth(2, 2020) => 28
 }
 
 // The dayOfTheYear function returns the day of the year for a given date:
@@ -34,6 +40,9 @@ int dayOfTheYear(DateTime date) {
   }
   days += date.day;
   return days;
+
+  // example:
+  // dayOfTheYear(DateTime(2020, 2, 28)) => 60
 }
 
 // The diff function returns the difference between two dates in days.
@@ -65,6 +74,9 @@ int diff(DateTime start, DateTime end, [String unit = 'day']) {
   } else {
     throw Exception('Invalid unit: $unit');
   }
+
+  // example:
+  // diff(DateTime(2020, 2, 28), DateTime(2020, 3, 1), 'week') => 1
 }
 
 // The isSameDate function returns true if the two dates are the same date.
@@ -72,4 +84,16 @@ bool isSameDate(DateTime start, DateTime end) {
   return start.year == end.year &&
       start.month == end.month &&
       start.day == end.day;
+
+  // example:
+  // isSameDate(DateTime(2020, 2, 28), DateTime(2020, 2, 28)) => true
+}
+
+// The quarter function returns the quarter for a given date.
+// The first quarter of the year is 1, the second is 2, etc.
+int quarter(DateTime date) {
+  return (date.month - 1) ~/ 3 + 1;
+
+  // example:
+  // quarter(DateTime(2020, 2, 28)) => 2
 }
