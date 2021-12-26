@@ -35,6 +35,16 @@ extension Horus on List {
     return contains(item);
   }
 
+  // The arrContainsAll method determines if the list contains all items in a specific list:
+  bool arrContainsAll(List items) {
+    for (var i = 0; i < items.length; i++) {
+      if (!contains(items[i])) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   // The arrSum method sum the values of an array:
   num arrSum() {
     num sum = 0;
