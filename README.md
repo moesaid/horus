@@ -1,39 +1,54 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## Horus
+Modular Dart Utilities
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+![Build](https://img.shields.io/badge/Tested-Fully%20Tested-brightgreen)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+---
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+### Who am i?
+I am a utility package that focuses on getting daily works done.
 
-## Features
+### What can i do?
+I can help you get your task done quickly by giving a hand with strings , array, and object manipulation, also providing some helper function in different areas.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+---
 
-## Getting started
+### My future?
+well.... there's is no clear roadmap but you will find me updated from time to time, also all PRs are welcome 😀
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+### Usage
+---
 
 ```dart
-const like = 'sample';
+// all string functions start with str
+// for exmaple strContains
+
+'Horus'.strContains(s); // true
+'Horus'.strContains(e); // false
 ```
 
-## Additional information
+```dart
+// all array functions start with arr
+// for exmaple arrFirst
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+[1, 2, 3].arrFirst(); // 1
+```
+
+```dart
+// the package include some Num and Date function as well feel free to check the files  'numbers.dart && date.dart'
+
+1000.abbreviate(), //'1.0K'
+
+isLeapYear(2020) // true
+```
+
+
+
+## 🐛 Bugs/Requests
+---
+If you encounter any problems feel free to open an issue. If you feel the library is missing a feature, please raise a ticket on Github and I'll look into it. Pull requests are also welcome.
+
+## ⭐ License
+---
+MIT License
