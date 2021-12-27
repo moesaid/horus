@@ -1,3 +1,5 @@
+![Build](https://i.ibb.co/3cr8qJf/cover-1.png)
+
 ## Horus
 Modular Dart Utilities
 
@@ -11,10 +13,6 @@ I am a utility package that focuses on getting daily works done.
 ### What can i do?
 I can help you get your task done quickly by giving a hand with strings , array, and object manipulation, also providing some helper function in different areas.
 
----
-
-### My future?
-well.... there's is no clear roadmap but you will find me updated from time to time, also all PRs are welcome 😀
 
 
 ### Usage
