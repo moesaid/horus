@@ -157,7 +157,7 @@ extension Horus on List {
   List arrCompact() {
     List arr = [];
     for (var i = 0; i < length; i++) {
-      if (this[i]) {
+      if (this[i] != null && this[i] != false && this[i] != true) {
         arr.add(this[i]);
       }
     }
