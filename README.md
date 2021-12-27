@@ -3,7 +3,9 @@
 ## Horus
 Modular Dart Utilities
 
-![Build](https://img.shields.io/badge/Tested-Fully%20Tested-brightgreen)
+![Build](https://img.shields.io/badge/Test-Passed-green)
+![Build](https://img.shields.io/badge/Dart-%201.0.0-blue)
+![Build](https://img.shields.io/badge/Awesome-Flutter-blue)
 
 ---
 
